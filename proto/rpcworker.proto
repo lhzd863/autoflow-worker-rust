@@ -1,0 +1,17 @@
+syntax = "proto3";
+package rpcworker;
+
+service RpcWorker {
+    // Our StartJob rpc accepts WorkerRequest and returns WorkerReply
+    rpc StartJob (RpcWorkerRequest) returns (RpcWorkerReply);
+}
+
+message RpcWorkerRequest {
+    // Request message contains the name to be WorkerServer
+    string name = 1;
+}
+
+message RpcWorkerReply {
+    // Reply contains the WorkerServer message
+    string message = 1;
+}

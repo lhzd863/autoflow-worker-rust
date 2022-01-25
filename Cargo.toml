@@ -1,0 +1,23 @@
+[package]
+name = "autoflow-worker"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]] # Bin to run the worker gRPC server
+name = "rpc-server"
+path = "src/rpc_server.rs"
+
+[[bin]] # Bin to run the worker gRPC client
+name = "rpc-client"
+path = "src/rpc_client.rs"
+
+[dependencies]
+serde_json = "1.0"
+tonic = "0.6"
+prost = "0.9"
+tokio = { version = "1.0", features = ["macros", "rt-multi-thread"] }
+
+
+[build-dependencies]
+tonic-build = "0.6"
+
